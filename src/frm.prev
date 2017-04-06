@@ -1,0 +1,8 @@
+a()
+where
+	fun a():void=(test=1,b())
+	where
+		var test:integer
+		fun b():void=(c=2,printInt(test+c)) where var c:integer fun printInt(i:integer):void end
+	end
+end

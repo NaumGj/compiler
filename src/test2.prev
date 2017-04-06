@@ -1,0 +1,6 @@
+(v=5, i=10, f(i))
+where
+	fun f(c:integer):integer = v*i
+	var v:integer
+	var i:integer
+end

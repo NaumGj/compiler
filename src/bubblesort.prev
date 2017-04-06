@@ -1,0 +1,34 @@
+(initArray(@nums), printArray(@nums), bubblesort(@nums), printArray(@nums)
+,0)
+where
+  fun bubblesort(a:ptr ar):void=
+      (for i=1,99:
+         for j=0,i-1:
+	   (k = i - 1 - j,
+	   if a^[k]>a^[k+1] then
+	     (tmp=a^[k],a^[k]=a^[k+1],a^[k+1]=tmp,none)
+	     where
+	       var tmp:integer
+	     end
+	   else
+	     none
+	   end)
+	 end
+       end
+      ,none)
+      where
+		var i:integer
+		var j:integer
+		var k:integer
+      end
+  typ ar:arr[100]integer
+  var nums:ar
+  fun printArray(a:ptr ar):void=(for i=0,99:(printInt(a^[i]),printChr(' '))end, printStr("\n\n")) where var i:integer end
+  fun initArray(a:ptr ar):void=(for i=0,99:a^[i]=randomInt() end where var i:integer end)
+
+  # STDLIB
+  fun randomInt():integer
+  fun printChr(c:char):void
+  fun printInt(i:integer):void
+  fun printStr(s:string):void
+end

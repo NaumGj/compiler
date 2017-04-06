@@ -1,0 +1,5 @@
+for i=1,10: (for j = 1,5: j = j + i end) end
+where
+	var i:integer
+	var j:integer
+end

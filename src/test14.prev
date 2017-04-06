@@ -1,0 +1,15 @@
+(
+r.x=1, i = r.x + 1, printInt(i)
+)
+where
+  var i:integer
+  var j:integer
+  var r:rec{x:integer, y:boolean}
+  fun f(a:integer):integer=1
+	where
+		fun g(l:integer):integer=2*l
+		var b:string
+	end
+  
+  fun printInt(o:integer):void
+end

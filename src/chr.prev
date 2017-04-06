@@ -1,0 +1,31 @@
+(init(), prnt(@a, 0, 15), printChr('\n'), prt(@a, 15), printChr('\n'))
+where
+	var a:str
+	fun init():void = 
+	(for i=0,15:
+		a[i] = randomChr()
+	end, none)
+	where var i:integer end
+	fun prnt(s: ptr str, id:integer, en:integer):void = 
+		if(id < en) then (
+			printChr(s^[id]),
+			prnt(s, id + 1, en),
+			printChr(s^[id])
+		) else (
+			printChr('\n')
+		) end
+	fun prt(s: ptr str, en:integer):void = 
+		(
+			i = 0,
+			while(i < en):
+				(printChr(s^[i]),
+				i = i + 1)
+			end
+		) where var i:integer end
+	typ str:arr[15] char
+	fun printStr(s:string):void
+	fun printChr(c:char):void
+	fun randomChr():char
+	fun printInt(i:integer):void
+	#[21.29--21.34]
+end

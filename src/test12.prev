@@ -1,0 +1,10 @@
+(v=5, printStr("10!="))
+where
+	var v:integer
+	var result:integer
+
+	# STDLIB
+  	fun printChr(c:char):void
+  	fun printInt(i:integer):void
+  	fun printStr(s:string):void
+end

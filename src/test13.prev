@@ -1,0 +1,8 @@
+printStr("Min\nMax")
+where
+	 # STDLIB
+  
+ 	fun printChr(c:char):void
+  	fun printInt(i:integer):void
+  	fun printStr(s:string):void
+end

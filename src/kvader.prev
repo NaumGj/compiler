@@ -1,0 +1,68 @@
+(
+	kvader(10,2,5),
+	kvader(1,2,3),
+	kvader(25,4,22),
+	kvader(1,1,10),
+	kvader(4,5,2)
+)
+where
+	fun kvader(s:int, v:int, g:int):void=
+	(
+		#printParams(s,v,g),
+		visina = v + 1 + g/2,
+		zamik = g/2,
+		for i=1,visina:
+		(
+			presledki(zamik-i+1),
+			zvezdice(1),
+			if (i == 1 | i == visina | (zamik - i + 1)==0) then
+				zvezdice(s-1)
+			else
+				presledki(s-1)
+			end,
+			zvezdice(1),
+			if i < v+1 & i < zamik+1 then
+				presledki(i-2)
+			else
+				if i > v+1 & i > zamik then
+					presledki(visina-i-1)
+				else
+					if i > v & i < visina - v then
+						presledki(v-1)
+					else
+						presledki(zamik-1)
+					end
+				end
+			end,
+			if i > 1 & i < visina then
+				zvezdice(1)
+			else
+				none
+			end,
+			printStr("\n")
+		)end
+	) where
+		var i:int
+		var visina:int
+		var zamik:int
+	end
+
+#	fun printParams(a:int, b:int, c:int):void=
+#	(
+#		printInt(a),
+#		printChr(' '),
+#		printInt(b),
+#		printChr(' '),
+#		printInt(c),
+#		printChr('\n')
+#	)
+#
+	fun zvezdice(i:int):void=for j=1,i:printStr(" *")end where var j:int end
+	fun presledki(i:int):void=for j=1,i:printStr("  ")end where var j:int end
+
+	typ int:integer
+	# STDLIB
+	#fun printChr(c:char):void
+	#fun printInt(i:integer):void
+	fun printStr(s:string):void
+end

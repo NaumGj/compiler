@@ -1,0 +1,46 @@
+(g(),12345)
+where
+    fun f(q:ptr arr[5]integer, a:integer):integer=
+    (
+        q^[a] = a,
+        a
+    )
+   
+   
+    fun g():void=
+    (
+        i=0,
+        while(i <= 4):
+            (
+                f(@q,i),
+                i=i+1
+            )
+        end,
+        printArr(@q)
+    )
+    where
+        var q:arr[5]integer
+    end
+   
+   
+    var i:integer
+	var j:rec{a:integer,b:char,c:string}
+    fun printInt(i:integer):void
+    fun printStr(s:string):void
+   
+    fun printArr(q:ptr arr[5]integer):void=
+    (
+        i=0,
+        while(i <= 4):
+            (
+                printInt(i),
+                printStr(" "),
+                printInt(q^[i]),
+                printStr(" \n"),
+                i=i+1
+            )
+        end
+    )
+    where var i:integer end
+   
+end

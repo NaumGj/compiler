@@ -1,0 +1,14 @@
+(printInt(f(123)), printStr("\n"))
+where
+	fun f(top:integer):integer = g()
+	where
+		fun g():integer = (top1=100, h())
+		where
+			var top1:integer
+			fun h():integer = (top3=2, top + top1 + top3) where var top3:integer end
+		end
+	end
+
+	fun printInt(i:integer):void
+	fun printStr(s:string):void
+end

@@ -1,0 +1,49 @@
+(initArray(@nums), printArray(@nums), quicksort(@nums, 0, 99), assertSorted(@nums), printArray(@nums))
+where
+  fun quicksort(a:ptr ar, lo:integer, hi:integer):void =
+      if lo < hi then
+        (p = a^[lo],
+        left = lo,
+        right = hi,
+        while left <= right :
+          (while a^[left] < p : left = left + 1 end,
+          while a^[right] > p : right = right - 1 end,
+          if left <= right then
+            (swap(a, left, right),
+            left = left + 1,
+            right = right - 1
+            )
+          else
+            none
+          end)
+        end,
+        quicksort(a, lo, right),
+        quicksort(a, left, hi)
+        ) where
+          var left:int
+          var right:int
+          var p:int
+        end
+      else
+        none
+      end
+
+  fun swap(a:ptr ar, b:integer, c:integer):void = (tmp=a^[b], a^[b]=a^[c], a^[c]=tmp) where var tmp:int end
+  typ ar:arr[100]integer
+  typ int:integer
+  var nums:ar
+
+  fun printArray(a:ptr ar):void=(printStr("\n\n"),for i=0,99:(printInt(a^[i]),printChr(' '))end, printStr("\n\n")) where var i:integer end
+  fun initArray(a:ptr ar):void=(for i=0,99:a^[i]=randomInt() end where var i:integer end)
+  fun debugInt(a:int):void = (printInt(a), printStr(" "))
+  fun assertSorted(a:ptr ar):void=(for i=0,98:if a^[i] < a^[i+1] then sorted=true else sorted=false end end, if sorted then printStr("Array is sorted") else printStr("Array not sorted") end) where
+  var sorted:boolean
+  var i:integer
+  end
+
+  # STDLIB
+  fun randomInt():integer
+  fun printChr(c:char):void
+  fun printInt(i:integer):void
+  fun printStr(s:string):void
+end

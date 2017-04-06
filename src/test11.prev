@@ -1,0 +1,5 @@
+a = i
+where
+	var a:integer
+	var i:integer
+end

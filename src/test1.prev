@@ -1,0 +1,8 @@
+f(a)
+where
+	var a:integer
+	fun f(b:integer):void = (c = 1)
+	where
+		var c:integer
+	end
+end

@@ -1,0 +1,7 @@
+for i=1,10: printInt(i) end
+where
+	var i:integer
+
+	# STDLIB
+  	fun printInt(i:integer):void
+end

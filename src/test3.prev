@@ -1,0 +1,5 @@
+if x > y then x - y else y - x end
+where
+	var x:integer
+	var y:integer
+end

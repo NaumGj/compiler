@@ -1,0 +1,39 @@
+(printStr("START: "), initArray(@nums), printArray(@nums), ssort(@nums), printStr("\nEND: "), printArray(@nums))
+where
+  fun ssort(a:ptr ar):void=
+    (for i=0,5:
+      (minIndex = i, 
+         for j=i+1,9: 
+	           if a^[j]<a^[minIndex] then
+                minIndex = j
+	           else
+	             none
+	           end
+	       end,
+         printMinIndex(minIndex),
+         printIterArray(a, i),
+         tmp=a^[i],a^[i]=a^[minIndex],a^[minIndex]=tmp)
+       end)
+      where
+        var i:integer
+	      var j:integer
+        var minIndex:integer
+        var tmp:integer
+      end
+  typ ar:arr[10]integer
+  var nums:ar
+  fun printMinIndex(i:integer):void= (printStr("Min index in this iteration is: "), printInt(i), printChr('\n'))
+  fun printArray(a:ptr ar):void=(for i=0,9:(printInt(a^[i]),printChr(' '))end, printStr("\n")) where var i:integer end
+  fun printIterArray(a:ptr ar, border:integer):void=
+    (for i=0,9:(if i == border then (printChr('|'), printChr(' ')) else none end, printInt(a^[i]),printChr(' ')) end, printStr("\n")) 
+    where 
+      var i:integer
+    end
+  fun initArray(a:ptr ar):void=(for i=0,9:a^[i]=randomInt() end where var i:integer end)
+
+  # STDLIB
+  fun randomInt():integer
+  fun printChr(c:char):void
+  fun printInt(i:integer):void
+  fun printStr(s:string):void
+end

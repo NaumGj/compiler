@@ -1,0 +1,15 @@
+(
+ sum = 0,
+ for i=1,5:
+ (
+  tmp = !(i % 2 == 0),
+  if tmp == true then sum = sum + i else 0 end
+ )
+ end,
+ sum
+ )
+where
+var i: integer
+var sum: integer
+var tmp: boolean
+end

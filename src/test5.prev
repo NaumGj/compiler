@@ -1,0 +1,10 @@
+(v = 10, f(v))
+where
+	fun f(c:integer):integer = 
+		a + b
+		where
+			var a:integer
+			var b:integer
+		end
+	var v:integer
+end
